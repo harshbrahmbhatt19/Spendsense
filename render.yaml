@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: spendsense-server
+    runtime: node
+    rootDir: server
+    buildCommand: npm ci && npm run build
+    startCommand: npm start

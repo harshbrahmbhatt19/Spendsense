@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #f7f5f0;
+  --color-paper-dim: #efece4;
+  --color-ink: #14181b;
+  --color-ink-dim: #1a1d1b;
+  --color-muted: #6b7280;
+  --color-line: #e2ded3;
+  --color-line-dark: #2a2f33;
+
+  --color-emerald: #0f6b4c;
+  --color-emerald-soft: #e3efe9;
+  --color-amber: #d98e3b;
+  --color-amber-soft: #faf0e0;
+  --color-brick: #c4433d;
+  --color-brick-soft: #f8e6e5;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+html.dark {
+  --color-paper: #14181b;
+  --color-paper-dim: #1e2327;
+  --color-ink: #f2f0ea;
+  --color-ink-dim: #f2f0ea;
+  --color-muted: #9aa1a9;
+  --color-line: #2a2f33;
+  --color-emerald-soft: #163a2c;
+  --color-amber-soft: #3a2e14;
+  --color-brick-soft: #3a1b19;
+}
+
+html.dark body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  min-width: 320px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@media (max-width: 767px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  button,
+  a,
+  select,
+  input,
+  textarea {
+    touch-action: manipulation;
+  }
+}
+
+.font-display {
+  font-family: var(--font-serif);
+}
+
+/* Tabular figures for anything financial - amounts should never jitter */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background-color: var(--color-emerald-soft);
+  color: var(--color-emerald);
+}
